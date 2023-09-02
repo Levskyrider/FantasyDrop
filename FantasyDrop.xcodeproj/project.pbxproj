@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BACBAE92AA23E9F009FBE45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */; };
+		4BACBAF22AA23EA1009FBE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BACBAF12AA23EA1009FBE45 /* Assets.xcassets */; };
+		4BACBAF52AA23EA1009FBE45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BACBAF32AA23EA1009FBE45 /* LaunchScreen.storyboard */; };
+		4BACBAFD2AA24460009FBE45 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBAFC2AA24460009FBE45 /* BaseNavigationController.swift */; };
+		4BACBAFF2AA2452A009FBE45 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBAFE2AA2452A009FBE45 /* ApplicationCoordinator.swift */; };
+		4BACBB012AA24549009FBE45 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB002AA24549009FBE45 /* Coordinator.swift */; };
+		4BACBB032AA2456E009FBE45 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB022AA2456E009FBE45 /* Api.swift */; };
+		4BACBB072AA246D3009FBE45 /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB062AA246D3009FBE45 /* IntroCoordinator.swift */; };
+		4BACBB0A2AA3693C009FBE45 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB092AA3693C009FBE45 /* IntroViewController.swift */; };
+		4BACBB0F2AA36C1D009FBE45 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4BACBB0E2AA36C1D009FBE45 /* SnapKit */; };
+		4BACBB112AA36C2C009FBE45 /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB102AA36C2C009FBE45 /* UIView+SnapKit.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4BACBAE52AA23E9F009FBE45 /* FantasyDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4BACBAF12AA23EA1009FBE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4BACBAF42AA23EA1009FBE45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4BACBAF62AA23EA1009FBE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BACBAFC2AA24460009FBE45 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		4BACBAFE2AA2452A009FBE45 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		4BACBB002AA24549009FBE45 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4BACBB022AA2456E009FBE45 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		4BACBB062AA246D3009FBE45 /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		4BACBB092AA3693C009FBE45 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		4BACBB102AA36C2C009FBE45 /* UIView+SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BACBAE22AA23E9F009FBE45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BACBB0F2AA36C1D009FBE45 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BACBADC2AA23E9F009FBE45 = {
+			isa = PBXGroup;
+			children = (
+				4BACBAE72AA23E9F009FBE45 /* FantasyDrop */,
+				4BACBAE62AA23E9F009FBE45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BACBAE62AA23E9F009FBE45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BACBAE52AA23E9F009FBE45 /* FantasyDrop.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BACBAE72AA23E9F009FBE45 /* FantasyDrop */ = {
+			isa = PBXGroup;
+			children = (
+				4BACBB042AA246AF009FBE45 /* App */,
+				4BACBB082AA246D9009FBE45 /* Flow */,
+				4BACBB052AA246C1009FBE45 /* Common */,
+				4BACBB122AA36C32009FBE45 /* Extensions */,
+				4BACBAF12AA23EA1009FBE45 /* Assets.xcassets */,
+				4BACBAF32AA23EA1009FBE45 /* LaunchScreen.storyboard */,
+				4BACBAF62AA23EA1009FBE45 /* Info.plist */,
+			);
+			path = FantasyDrop;
+			sourceTree = "<group>";
+		};
+		4BACBB042AA246AF009FBE45 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */,
+				4BACBAFE2AA2452A009FBE45 /* ApplicationCoordinator.swift */,
+				4BACBB022AA2456E009FBE45 /* Api.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4BACBB052AA246C1009FBE45 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4BACBB002AA24549009FBE45 /* Coordinator.swift */,
+				4BACBAFC2AA24460009FBE45 /* BaseNavigationController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4BACBB082AA246D9009FBE45 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				4BACBB062AA246D3009FBE45 /* IntroCoordinator.swift */,
+				4BACBB092AA3693C009FBE45 /* IntroViewController.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		4BACBB122AA36C32009FBE45 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4BACBB102AA36C2C009FBE45 /* UIView+SnapKit.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BACBAE42AA23E9F009FBE45 /* FantasyDrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BACBAF92AA23EA1009FBE45 /* Build configuration list for PBXNativeTarget "FantasyDrop" */;
+			buildPhases = (
+				4BACBAE12AA23E9F009FBE45 /* Sources */,
+				4BACBAE22AA23E9F009FBE45 /* Frameworks */,
+				4BACBAE32AA23E9F009FBE45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FantasyDrop;
+			packageProductDependencies = (
+				4BACBB0E2AA36C1D009FBE45 /* SnapKit */,
+			);
+			productName = FantasyDrop;
+			productReference = 4BACBAE52AA23E9F009FBE45 /* FantasyDrop.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BACBADD2AA23E9F009FBE45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4BACBAE42AA23E9F009FBE45 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 4BACBAE02AA23E9F009FBE45 /* Build configuration list for PBXProject "FantasyDrop" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4BACBADC2AA23E9F009FBE45;
+			packageReferences = (
+				4BACBB0D2AA36C1D009FBE45 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = 4BACBAE62AA23E9F009FBE45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BACBAE42AA23E9F009FBE45 /* FantasyDrop */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BACBAE32AA23E9F009FBE45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BACBAF52AA23EA1009FBE45 /* LaunchScreen.storyboard in Resources */,
+				4BACBAF22AA23EA1009FBE45 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BACBAE12AA23E9F009FBE45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BACBB032AA2456E009FBE45 /* Api.swift in Sources */,
+				4BACBAE92AA23E9F009FBE45 /* AppDelegate.swift in Sources */,
+				4BACBB0A2AA3693C009FBE45 /* IntroViewController.swift in Sources */,
+				4BACBB012AA24549009FBE45 /* Coordinator.swift in Sources */,
+				4BACBAFD2AA24460009FBE45 /* BaseNavigationController.swift in Sources */,
+				4BACBB112AA36C2C009FBE45 /* UIView+SnapKit.swift in Sources */,
+				4BACBAFF2AA2452A009FBE45 /* ApplicationCoordinator.swift in Sources */,
+				4BACBB072AA246D3009FBE45 /* IntroCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4BACBAF32AA23EA1009FBE45 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BACBAF42AA23EA1009FBE45 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4BACBAF72AA23EA1009FBE45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4BACBAF82AA23EA1009FBE45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BACBAFA2AA23EA1009FBE45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3EUV3J8K83;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FantasyDrop/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AugustProject.FantasyDrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4BACBAFB2AA23EA1009FBE45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3EUV3J8K83;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FantasyDrop/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AugustProject.FantasyDrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BACBAE02AA23E9F009FBE45 /* Build configuration list for PBXProject "FantasyDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BACBAF72AA23EA1009FBE45 /* Debug */,
+				4BACBAF82AA23EA1009FBE45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BACBAF92AA23EA1009FBE45 /* Build configuration list for PBXNativeTarget "FantasyDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BACBAFA2AA23EA1009FBE45 /* Debug */,
+				4BACBAFB2AA23EA1009FBE45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4BACBB0D2AA36C1D009FBE45 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4BACBB0E2AA36C1D009FBE45 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BACBB0D2AA36C1D009FBE45 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4BACBADD2AA23E9F009FBE45 /* Project object */;
+}

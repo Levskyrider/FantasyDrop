@@ -11,7 +11,7 @@ class IntroViewController: UIViewController {
   
   //MARK: - Variables
   
-  var onLoaded: (() -> ())?
+  var onIntroLoaded: (() -> ())?
   
   //MARK: - UI
   
@@ -25,15 +25,12 @@ class IntroViewController: UIViewController {
   private var titleLabel: UILabel = {
     let label = UILabel()
     label.text = "FantasyDrop"
+    label.textColor = .white
     label.font = UIFont.boldSystemFont(ofSize: 35)
     return label
   }()
   
   //MARK: - Life cycle
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -41,11 +38,11 @@ class IntroViewController: UIViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-   
     startStarndardAnimations { [weak self] in
-      self?.onLoaded?()
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        self?.onIntroLoaded?()
+      }
     }
-    
   }
   
   //MARK: - Setup UI

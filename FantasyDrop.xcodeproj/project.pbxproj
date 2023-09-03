@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B16CFD52AA4DD9B000A973B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16CFD42AA4DD9B000A973B /* AuthViewController.swift */; };
+		4B16CFD72AA4DE0D000A973B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16CFD62AA4DE0D000A973B /* AuthViewModel.swift */; };
+		4B16CFDC2AA4EBEE000A973B /* SwiftyDropbox in Frameworks */ = {isa = PBXBuildFile; productRef = 4B16CFDB2AA4EBEE000A973B /* SwiftyDropbox */; };
 		4BACBAE92AA23E9F009FBE45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */; };
 		4BACBAF22AA23EA1009FBE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BACBAF12AA23EA1009FBE45 /* Assets.xcassets */; };
 		4BACBAF52AA23EA1009FBE45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BACBAF32AA23EA1009FBE45 /* LaunchScreen.storyboard */; };
@@ -14,13 +17,15 @@
 		4BACBAFF2AA2452A009FBE45 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBAFE2AA2452A009FBE45 /* ApplicationCoordinator.swift */; };
 		4BACBB012AA24549009FBE45 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB002AA24549009FBE45 /* Coordinator.swift */; };
 		4BACBB032AA2456E009FBE45 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB022AA2456E009FBE45 /* Api.swift */; };
-		4BACBB072AA246D3009FBE45 /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB062AA246D3009FBE45 /* IntroCoordinator.swift */; };
+		4BACBB072AA246D3009FBE45 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB062AA246D3009FBE45 /* AuthCoordinator.swift */; };
 		4BACBB0A2AA3693C009FBE45 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB092AA3693C009FBE45 /* IntroViewController.swift */; };
 		4BACBB0F2AA36C1D009FBE45 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4BACBB0E2AA36C1D009FBE45 /* SnapKit */; };
 		4BACBB112AA36C2C009FBE45 /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB102AA36C2C009FBE45 /* UIView+SnapKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B16CFD42AA4DD9B000A973B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		4B16CFD62AA4DE0D000A973B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4BACBAE52AA23E9F009FBE45 /* FantasyDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BACBAF12AA23EA1009FBE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,7 +35,7 @@
 		4BACBAFE2AA2452A009FBE45 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		4BACBB002AA24549009FBE45 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4BACBB022AA2456E009FBE45 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		4BACBB062AA246D3009FBE45 /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		4BACBB062AA246D3009FBE45 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		4BACBB092AA3693C009FBE45 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		4BACBB102AA36C2C009FBE45 /* UIView+SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,12 +46,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BACBB0F2AA36C1D009FBE45 /* SnapKit in Frameworks */,
+				4B16CFDC2AA4EBEE000A973B /* SwiftyDropbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B16CFD82AA4DF33000A973B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4B16CFD42AA4DD9B000A973B /* AuthViewController.swift */,
+				4B16CFD62AA4DE0D000A973B /* AuthViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		4B16CFD92AA4DF38000A973B /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				4BACBB092AA3693C009FBE45 /* IntroViewController.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 		4BACBADC2AA23E9F009FBE45 = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +122,9 @@
 		4BACBB082AA246D9009FBE45 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				4BACBB062AA246D3009FBE45 /* IntroCoordinator.swift */,
-				4BACBB092AA3693C009FBE45 /* IntroViewController.swift */,
+				4BACBB062AA246D3009FBE45 /* AuthCoordinator.swift */,
+				4B16CFD92AA4DF38000A973B /* Intro */,
+				4B16CFD82AA4DF33000A973B /* Auth */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -131,6 +155,7 @@
 			name = FantasyDrop;
 			packageProductDependencies = (
 				4BACBB0E2AA36C1D009FBE45 /* SnapKit */,
+				4B16CFDB2AA4EBEE000A973B /* SwiftyDropbox */,
 			);
 			productName = FantasyDrop;
 			productReference = 4BACBAE52AA23E9F009FBE45 /* FantasyDrop.app */;
@@ -162,6 +187,7 @@
 			mainGroup = 4BACBADC2AA23E9F009FBE45;
 			packageReferences = (
 				4BACBB0D2AA36C1D009FBE45 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4B16CFDA2AA4EBEE000A973B /* XCRemoteSwiftPackageReference "SwiftyDropbox" */,
 			);
 			productRefGroup = 4BACBAE62AA23E9F009FBE45 /* Products */;
 			projectDirPath = "";
@@ -189,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B16CFD72AA4DE0D000A973B /* AuthViewModel.swift in Sources */,
 				4BACBB032AA2456E009FBE45 /* Api.swift in Sources */,
 				4BACBAE92AA23E9F009FBE45 /* AppDelegate.swift in Sources */,
 				4BACBB0A2AA3693C009FBE45 /* IntroViewController.swift in Sources */,
@@ -196,7 +223,8 @@
 				4BACBAFD2AA24460009FBE45 /* BaseNavigationController.swift in Sources */,
 				4BACBB112AA36C2C009FBE45 /* UIView+SnapKit.swift in Sources */,
 				4BACBAFF2AA2452A009FBE45 /* ApplicationCoordinator.swift in Sources */,
-				4BACBB072AA246D3009FBE45 /* IntroCoordinator.swift in Sources */,
+				4B16CFD52AA4DD9B000A973B /* AuthViewController.swift in Sources */,
+				4BACBB072AA246D3009FBE45 /* AuthCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +436,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4B16CFDA2AA4EBEE000A973B /* XCRemoteSwiftPackageReference "SwiftyDropbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dropbox/SwiftyDropbox.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		4BACBB0D2AA36C1D009FBE45 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -419,6 +455,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4B16CFDB2AA4EBEE000A973B /* SwiftyDropbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B16CFDA2AA4EBEE000A973B /* XCRemoteSwiftPackageReference "SwiftyDropbox" */;
+			productName = SwiftyDropbox;
+		};
 		4BACBB0E2AA36C1D009FBE45 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4BACBB0D2AA36C1D009FBE45 /* XCRemoteSwiftPackageReference "SnapKit" */;

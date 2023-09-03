@@ -7,18 +7,6 @@
 
 import Foundation
 import UIKit
-//
-//protocol Coordinator: AnyObject {
-//  var router : RouterExact { get }
-//  var childCoordinators: [Coordinator] { get set }
-//  func addDependency(coordinator: Coordinator)
-//  func removeDependency(coordinator: Coordinator)
-//  func start()
-//  //finish - обовязково дописати
-//  init(navigationController: UINavigationController)
-//}
-//
-//
 
 protocol CoordinatorFinishDelegate : AnyObject {
   func coordinatorDidFinish(childCoordinator: Coordinator)

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyDropbox
 
 class ApplicationCoordinator: Coordinator  {
   
@@ -24,14 +25,27 @@ class ApplicationCoordinator: Coordinator  {
   }
   
   func startIntro() {
-    let introCoordinator = IntroCoordinator(navigationController: navigationController, api: api)
-    introCoordinator.start()
-    addDependency(coordinator: introCoordinator)
+    let authCoordinator = AuthCoordinator(navigationController: navigationController, api: api)
+    authCoordinator.start()
+    addDependency(coordinator: authCoordinator)
   }
   
   func finish() {
     print("Finish")
   }
   
+}
+
+//MARK: - Dropbox
+
+extension ApplicationCoordinator {
+  
+  func authResultHandled(_ result: DropboxOAuthResult) {
+    for coordinator in childCoordinators {
+      if coordinator is AuthCoordinator {
+        coordinator.authResultHandled(result)
+      }
+    }
+  }
   
 }

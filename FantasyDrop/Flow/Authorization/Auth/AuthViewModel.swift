@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import SwiftyDropbox
 
 enum AuthViewModelEvent {
   
 }
 
 class AuthViewModel {
+  
   var onEvent: ((AuthViewModelEvent) -> ())?
   var api: Api
   
@@ -19,4 +21,11 @@ class AuthViewModel {
     self.api = api
   }
   
+  func startDropboxAuth(controller: UIViewController) {
+    api.dropboxAuth(currentController: controller)
+  }
+  
+  func closeAuth() {
+    
+  }
 }

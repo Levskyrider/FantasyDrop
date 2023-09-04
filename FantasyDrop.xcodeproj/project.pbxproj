@@ -21,6 +21,9 @@
 		4BACBB0A2AA3693C009FBE45 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB092AA3693C009FBE45 /* IntroViewController.swift */; };
 		4BACBB0F2AA36C1D009FBE45 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4BACBB0E2AA36C1D009FBE45 /* SnapKit */; };
 		4BACBB112AA36C2C009FBE45 /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBB102AA36C2C009FBE45 /* UIView+SnapKit.swift */; };
+		4BD2E3ED2AA526B40030D747 /* FileBrousingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2E3EC2AA526B40030D747 /* FileBrousingCoordinator.swift */; };
+		4BD2E3F02AA527F70030D747 /* FileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2E3EF2AA527F70030D747 /* FileListViewController.swift */; };
+		4BD2E3F22AA528F20030D747 /* FileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2E3F12AA528F20030D747 /* FileListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		4BACBB062AA246D3009FBE45 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		4BACBB092AA3693C009FBE45 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		4BACBB102AA36C2C009FBE45 /* UIView+SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapKit.swift"; sourceTree = "<group>"; };
+		4BD2E3EC2AA526B40030D747 /* FileBrousingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrousingCoordinator.swift; sourceTree = "<group>"; };
+		4BD2E3EF2AA527F70030D747 /* FileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
+		4BD2E3F12AA528F20030D747 /* FileListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +128,8 @@
 		4BACBB082AA246D9009FBE45 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				4BACBB062AA246D3009FBE45 /* AuthCoordinator.swift */,
-				4B16CFD92AA4DF38000A973B /* Intro */,
-				4B16CFD82AA4DF33000A973B /* Auth */,
+				4BD2E3EB2AA5265C0030D747 /* Authorization */,
+				4BD2E3EE2AA526BA0030D747 /* File Brousing */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -135,6 +140,26 @@
 				4BACBB102AA36C2C009FBE45 /* UIView+SnapKit.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4BD2E3EB2AA5265C0030D747 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				4BACBB062AA246D3009FBE45 /* AuthCoordinator.swift */,
+				4B16CFD92AA4DF38000A973B /* Intro */,
+				4B16CFD82AA4DF33000A973B /* Auth */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		4BD2E3EE2AA526BA0030D747 /* File Brousing */ = {
+			isa = PBXGroup;
+			children = (
+				4BD2E3EC2AA526B40030D747 /* FileBrousingCoordinator.swift */,
+				4BD2E3EF2AA527F70030D747 /* FileListViewController.swift */,
+				4BD2E3F12AA528F20030D747 /* FileListViewModel.swift */,
+			);
+			path = "File Brousing";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,11 +242,14 @@
 			files = (
 				4B16CFD72AA4DE0D000A973B /* AuthViewModel.swift in Sources */,
 				4BACBB032AA2456E009FBE45 /* Api.swift in Sources */,
+				4BD2E3F02AA527F70030D747 /* FileListViewController.swift in Sources */,
 				4BACBAE92AA23E9F009FBE45 /* AppDelegate.swift in Sources */,
 				4BACBB0A2AA3693C009FBE45 /* IntroViewController.swift in Sources */,
+				4BD2E3F22AA528F20030D747 /* FileListViewModel.swift in Sources */,
 				4BACBB012AA24549009FBE45 /* Coordinator.swift in Sources */,
 				4BACBAFD2AA24460009FBE45 /* BaseNavigationController.swift in Sources */,
 				4BACBB112AA36C2C009FBE45 /* UIView+SnapKit.swift in Sources */,
+				4BD2E3ED2AA526B40030D747 /* FileBrousingCoordinator.swift in Sources */,
 				4BACBAFF2AA2452A009FBE45 /* ApplicationCoordinator.swift in Sources */,
 				4B16CFD52AA4DD9B000A973B /* AuthViewController.swift in Sources */,
 				4BACBB072AA246D3009FBE45 /* AuthCoordinator.swift in Sources */,

@@ -21,13 +21,28 @@ class ApplicationCoordinator: Coordinator  {
   }
   
   func start() {
-    startIntro()
+    startAuth()
   }
   
-  func startIntro() {
+  func startAuth() {
     let authCoordinator = AuthCoordinator(navigationController: navigationController, api: api)
+    authCoordinator.onEvent = { [weak self] event in
+      guard let self = self else { return }
+      switch event {
+      case .userLoggedIn:
+        print("User logged in")
+        self.startFileBrousing()
+      }
+    }
     authCoordinator.start()
     addDependency(coordinator: authCoordinator)
+  }
+  
+  func startFileBrousing() {
+    let fileBrousingCoordinator = FileBrousingCoordinator(navigationController: navigationController, api: api)
+    
+    fileBrousingCoordinator.start()
+    addDependency(coordinator: fileBrousingCoordinator)
   }
   
   func finish() {
@@ -40,10 +55,10 @@ class ApplicationCoordinator: Coordinator  {
 
 extension ApplicationCoordinator {
   
-  func authResultHandled(_ result: DropboxOAuthResult) {
+  func authResultHandled(_ authResult: DropboxOAuthResult) {
     for coordinator in childCoordinators {
-      if coordinator is AuthCoordinator {
-        coordinator.authResultHandled(result)
+      if let coordinator = coordinator as? AuthCoordinator {
+        coordinator.authResultHandled(authResult)
       }
     }
   }

@@ -9,12 +9,18 @@ import UIKit
 import SwiftyDropbox
 
 enum AuthCoordinatorEvent {
-  
+  case userLoggedIn
+}
+
+protocol AuthResultHandler {
+  func authSuccess()
+  func authCanceled()
+  func authError(description: String?)
 }
  
 class AuthCoordinator: Coordinator {
   
-  var onEvent: (() -> ())?
+  var onEvent: ((AuthCoordinatorEvent) -> ())?
   var childCoordinators: [Coordinator] = []
   var navigationController: UINavigationController
   var api: Api
@@ -44,7 +50,7 @@ class AuthCoordinator: Coordinator {
       guard let self = self else { return }
       switch event {
       case .loggedIn:
-        print("User logged in")
+        self.onEvent?(.userLoggedIn)
       }
     }
     set(controller: authViewControler)
@@ -54,14 +60,25 @@ class AuthCoordinator: Coordinator {
     print("Finish")
   }
   
-  
 }
 
+//MARK: - Dropbox auth
+
 extension AuthCoordinator {
-  func authResultHandled(_ result: DropboxOAuthResult) {
+  func authResultHandled(_ authResult: DropboxOAuthResult) {
     for vc in navigationController.viewControllers {
-      if vc is AuthViewController {
-        vc
+      if let vc = vc as? AuthResultHandler {
+        switch authResult {
+        case .success:
+          print("Success! User is logged into DropboxClientsManager.")
+          vc.authSuccess()
+        case .cancel:
+          print("Authorization flow was manually canceled by user!")
+          vc.authCanceled()
+        case .error(_, let description):
+          print("Error: \(String(describing: description))")
+          vc.authError(description: description)
+        }
       }
     }
   }

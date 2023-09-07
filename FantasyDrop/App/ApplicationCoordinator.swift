@@ -41,7 +41,6 @@ class ApplicationCoordinator: Coordinator  {
   
   func startFileBrousing() {
     let fileBrousingCoordinator = FileBrousingCoordinator(navigationController: navigationController, api: api)
-    
     fileBrousingCoordinator.start()
     addDependency(coordinator: fileBrousingCoordinator)
   }

@@ -38,6 +38,18 @@ class FileListViewController: UIViewController {
   init(viewModel: FileListViewModel) {
     super.init(nibName: nil, bundle: nil)
     self.viewModel = viewModel
+    
+    viewModel.onEvent = { [weak self] event in
+      guard let self = self else { return }
+      switch event {
+      case .startLoadingFilesList:
+        print("Start loading")
+      case .listLoaded:
+        self.reloadCollectionView()
+      case .errorLoadingFileList(let errorDescription):
+        print(errorDescription)
+      }
+    }
   }
   
   required init?(coder: NSCoder) {
@@ -47,7 +59,6 @@ class FileListViewController: UIViewController {
   //MARK: - Life cycle
   
   override func viewDidLoad() {
-    title = Defaults.title
     viewModel.loadFilesList()
   }
   
@@ -57,11 +68,6 @@ class FileListViewController: UIViewController {
     setupCollectionView()
     
     setupUI()
-    
-    bind()
-    
-    
-    
   }
   
   //MARK: - Setup UI
@@ -101,20 +107,6 @@ class FileListViewController: UIViewController {
     collectionView.delegate = self
     
     collectionView.register(FileCollectionViewCell.self, forCellWithReuseIdentifier: FileCollectionViewCell.identrifier)
-  }
-  
-  //MARK: - Bind
-  
-  func bind() {
-    viewModel.onEvent = { [weak self] event in
-      guard let self = self else { return }
-      switch event {
-      case .listLoaded:
-        self.reloadCollectionView()
-      case .errorLoadingFileList(let errorDescription):
-        print(errorDescription)
-      }
-    }
   }
   
   //MARK: - UI logic

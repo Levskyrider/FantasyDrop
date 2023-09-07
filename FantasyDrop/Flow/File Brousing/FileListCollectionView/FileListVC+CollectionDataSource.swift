@@ -10,17 +10,17 @@ import UIKit
 //MARK: - CollectionViewDataSource
 
 extension FileListViewController: UICollectionViewDataSource {
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return viewModel.dataSource.count
+    return viewModel.itemsCount
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FileCollectionViewCell.identrifier, for: indexPath) as! FileCollectionViewCell
-    let elementViewModel = viewModel.dataSource[indexPath.row]
+    let elementViewModel = viewModel[elementForIndexPath: indexPath]
     cell.viewModel = elementViewModel
     
     return cell
   }
-  
   
 }

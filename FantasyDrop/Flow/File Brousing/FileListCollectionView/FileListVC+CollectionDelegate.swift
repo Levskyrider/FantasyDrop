@@ -17,7 +17,8 @@ extension FileListViewController: UICollectionViewDelegate {
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let element = viewModel.dataSource[indexPath.row]
+    let element = viewModel[elementForIndexPath: indexPath]
     onEvent?(.shouldOpenFile(element.fileType, element.path))
   }
+  
 }

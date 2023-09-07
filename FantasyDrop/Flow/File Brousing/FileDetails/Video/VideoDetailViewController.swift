@@ -12,8 +12,8 @@ class VideoDetailViewController: UITabBarController {
   
   var viewModel: VideoDetailViewModel!
   
-  let player = AVPlayer(url: URL(fileURLWithPath: "path_to_your_video.mp4")) // Replace with your video URL or file path
-    let playerLayer = AVPlayerLayer()
+  var player: AVPlayer?//(url: URL(fileURLWithPath: "path_to_your_video.mp4")) // Replace with your video URL or file path
+  let playerLayer = AVPlayerLayer()
   
   init(viewModel: VideoDetailViewModel) {
     self.viewModel = viewModel
@@ -25,7 +25,6 @@ class VideoDetailViewController: UITabBarController {
       switch event {
       case .videoDownloaded:
         self.playVideo()
-        //self.setImage()
       case .startLoadingFile:
         print("Start loading")
       }
@@ -40,19 +39,20 @@ class VideoDetailViewController: UITabBarController {
     super.viewDidLoad()
     
     // Configure the player layer
-           playerLayer.player = player
-           playerLayer.frame = view.bounds
-           playerLayer.videoGravity = .resizeAspectFill
-           view.layer.addSublayer(playerLayer)
-           
-           // Play the video
-           
+//    playerLayer.player = player
+    playerLayer.frame = view.bounds
+    playerLayer.videoGravity = .resizeAspectFill
+    view.layer.addSublayer(playerLayer)
+    
+    // Play the video
+    
   }
   
   func playVideo() {
     guard let assetURL = viewModel.assetURL else { return }
     let player = AVPlayer(url: assetURL)
-    playerLayer.player = player
+    self.player = player
+    playerLayer.player = self.player
     player.play()
   }
   

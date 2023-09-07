@@ -30,7 +30,7 @@ class Api {
   
   var client: DropboxClient? {
     get {
-        return DropboxClientsManager.authorizedClient
+      return DropboxClientsManager.authorizedClient
     }
   }
   
@@ -50,40 +50,28 @@ class Api {
     
     var request = URLRequest(url: tokenURL)
     request.httpMethod = "POST"
- //   print(permanentRefreshToken)
-    let parameters = [
-        "refresh_token": permanentRefreshToken!,
-        "grant_type": "refresh_token",
-        "client_id": appKey,
-        "client_secret": appSecret
-    ]
     
     let params = "refresh_token=\(permanentRefreshToken!)&grant_type=refresh_token&client_id=\(appKey)&client_secret=\(appSecret)"
     
-    if let requestData = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
-      request.httpBody = params.description.data(using: .ascii)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { [weak self] (data, response, error) in
-            if let error = error {
-                print("Error: \(error)")
-            } else if let data = data {
-                if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    print("Response: \(responseJSON)")
-                  
-                  let token = responseJSON["access_token"] as? String
-                  let expiresIn = responseJSON["expires_in"] as? TimeInterval
-                  self?.setWithNew(accessToken: token, nextExpiresIn: expiresIn, completion: completion)
-                }
-            }
+    request.httpBody = params.description.data(using: .ascii)
+    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    
+    let session = URLSession.shared
+    let task = session.dataTask(with: request) { [weak self] (data, response, error) in
+      if let error = error {
+        print("Error: \(error)")
+      } else if let data = data {
+        if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+          print("Response: \(responseJSON)")
+          
+          let token = responseJSON["access_token"] as? String
+          let expiresIn = responseJSON["expires_in"] as? TimeInterval
+          self?.setWithNew(accessToken: token, nextExpiresIn: expiresIn, completion: completion)
         }
-
-        task.resume()
-    } else {
-      print("Error creating request data")
+      }
     }
     
+    task.resume()
   }
   
   private func setWithNew(accessToken: String?, nextExpiresIn: TimeInterval?, completion: (() -> ())? = nil) {
@@ -109,7 +97,7 @@ class Api {
   }
   
   func loadFilesList(completion: @escaping ((DropboxResult<Array<Files.Metadata>>) -> ())) {
-   // DropboxClientsManager.authorizedClient = nil
+    // DropboxClientsManager.authorizedClient = nil
     if client == nil {
       refreshToken {
         self.loadFilesList(completion: completion)
@@ -127,7 +115,7 @@ class Api {
   }
   
   
- 
+  
   func download(path: String, completion: @escaping ((Bool) -> ())) {
     let fileManager = FileManager.default
     let directoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]

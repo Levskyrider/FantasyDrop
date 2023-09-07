@@ -27,7 +27,6 @@ class VideoDetailViewModel {
       let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
       let fileURL = directoryURL.appendingPathComponent(self.path)
       if fileManager.fileExists(atPath: fileURL.path) {
-      //  let asset = AVAsset(url: fileURL)
         return fileURL
       } else {
         downloadVideo(atPath: self.path)

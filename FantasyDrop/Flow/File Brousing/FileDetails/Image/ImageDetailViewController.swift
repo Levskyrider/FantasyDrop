@@ -15,8 +15,21 @@ class ImageDetailViewController: UITabBarController, UIScrollViewDelegate {
   
   //MARK: - UI
   
-  var scrollView: UIScrollView!
-  var imageView: UIImageView!
+  var scrollView: UIScrollView = {
+    let scrollView = UIScrollView()
+    scrollView.backgroundColor = .white
+    scrollView.minimumZoomScale = 1.0
+    scrollView.maximumZoomScale = 2.0
+    scrollView.translatesAutoresizingMaskIntoConstraints = false
+    return scrollView
+  }()
+  
+  var imageView: UIImageView = {
+    let imageView = UIImageView()
+    imageView.contentMode = .scaleAspectFit
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    return imageView
+  }()
   
   lazy var activityIndicator = UIActivityIndicatorView()
   
@@ -49,15 +62,20 @@ class ImageDetailViewController: UITabBarController, UIScrollViewDelegate {
     super.viewDidLoad()
     
     // Create UIScrollView
-    scrollView = UIScrollView()
-    scrollView.backgroundColor = .white
     scrollView.delegate = self
-    scrollView.minimumZoomScale = 1.0
-    scrollView.maximumZoomScale = 2.0
-    scrollView.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(scrollView)
     
-    // Add constraints for UIScrollView
+    if let image = viewModel.image {
+      imageView.image = image
+    }
+  
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    setupUI()
+  }
+  
+  func setupUI() {
+    view.addSubview(scrollView)
     NSLayoutConstraint.activate([
       scrollView.topAnchor.constraint(equalTo: view.topAnchor),
       scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -65,23 +83,13 @@ class ImageDetailViewController: UITabBarController, UIScrollViewDelegate {
       scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
     
-    // Create UIImageView
-    imageView = UIImageView(image: UIImage(named: ""))
-    imageView.contentMode = .scaleAspectFit
-    imageView.translatesAutoresizingMaskIntoConstraints = false
     scrollView.addSubview(imageView)
-    
-    // Add constraints for UIImageView
     NSLayoutConstraint.activate([
       imageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
       imageView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
       imageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
       imageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
     ])
-    
-    if let image = viewModel.image {
-      imageView.image = image
-    }
   }
   
   //MARK: - Logic

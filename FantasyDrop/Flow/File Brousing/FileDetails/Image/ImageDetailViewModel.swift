@@ -21,11 +21,8 @@ class ImageDetailViewModel {
   var path: String
   var api: Api
   
-  //перенести загрузку в инит чтобы не было лишних вызовов
   var image: UIImage? {
     get {
-      let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-      let fileURL = directoryURL.appendingPathComponent(self.path)
       if fileManager.fileExists(atPath: fileURL.path) {
         if let content = try? Data(contentsOf: fileURL) {
           let image = UIImage(data: content)
@@ -37,21 +34,25 @@ class ImageDetailViewModel {
     }
   }
   
-  func startLoadImage() {
-    let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    let fileURL = directoryURL.appendingPathComponent(self.path)
-    if fileManager.fileExists(atPath: fileURL.path) {
-      return
-    } else {
-      downloadImage(atPath: self.path)
+  var fileURL: URL {
+    get {
+      let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+      return directoryURL.appendingPathComponent(self.path)
     }
   }
-  
   
   init(filePath: String, api: Api = Api()) {
     self.api = api
     self.path = filePath
     startLoadImage()
+  }
+  
+  func startLoadImage() {
+    if fileManager.fileExists(atPath: fileURL.path) {
+      return
+    } else {
+      downloadImage(atPath: self.path)
+    }
   }
   
   func downloadImage(atPath path: String) {

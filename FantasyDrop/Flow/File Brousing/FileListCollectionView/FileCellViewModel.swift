@@ -15,7 +15,6 @@ enum FileType {
 }
 
 enum FileCellViewModelEvent {
-  case shouldOpen(FileType, String)
   case loadedImage(UIImage?)
 }
 
@@ -29,7 +28,18 @@ class FileCellViewModel {
     }
   }
   var path: String
-  var fileType: FileType = .other
+  var fileType: FileType {
+    get {
+      switch fileExtension {
+      case "mp4", "avi", "mov":
+        return .video
+      case "png", "jpeg", "jpg", "bmp", "gif":
+        return .image
+      default:
+        return .other
+      }
+    }
+  }
   var fileExtension: String? = ""
     
   func setImageMiniature() {
@@ -40,14 +50,6 @@ class FileCellViewModel {
     self.path = path
     let fileExtension = path.components(separatedBy: ".").last
     self.fileExtension = fileExtension
-    switch fileExtension {
-    case "mp4":
-      self.fileType = .video
-    case "png", "jpeg":
-      self.fileType = .image
-    default:
-      self.fileType = .other
-    }
   }
-  
+    
 }

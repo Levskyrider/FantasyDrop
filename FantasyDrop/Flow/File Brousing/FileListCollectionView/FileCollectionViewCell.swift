@@ -65,8 +65,8 @@ class FileCollectionViewCell: UICollectionViewCell {
         if let image = image {
           self.fileMiniatureImageView.image = image
         }
-      case .shouldOpen(let fileType, let path):
-        print("Should open")
+//      case .shouldOpen(let fileType, let path):
+//        print("Should open")
       }
     }
   }

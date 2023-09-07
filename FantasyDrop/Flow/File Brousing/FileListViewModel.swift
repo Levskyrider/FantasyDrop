@@ -9,22 +9,32 @@ import UIKit
 import SwiftyDropbox
 
 enum FileListViewModelEvent {
+  case startLoadingFilesList
   case listLoaded
   case errorLoadingFileList(String)
 }
-//Section daata source
+
 class FileListViewModel {
   
   var onEvent: ((FileListViewModelEvent) -> ())?
   var api: Api
-  var lastDownloadedFileIndex: Int = -1
+  
+  private var lastDownloadedFileIndex: Int = -1
   var nextCellIndexToDownloadNewFiles: Int {
     get {
       return lastDownloadedFileIndex - 2
     }
   }
   
-  var dataSource: [FileCellViewModel] = []
+  private var dataSource: [FileCellViewModel] = []
+  
+  subscript (elementForIndexPath indexPath: IndexPath) -> FileCellViewModel {
+    return dataSource[indexPath.row]
+  }
+  
+  var itemsCount: Int {
+    return dataSource.count
+  }
   
   init(api: Api = Api()) {
     self.api = api
@@ -41,8 +51,6 @@ class FileListViewModel {
         self.onEvent?(.errorLoadingFileList(errorDescription))
       }
     }
-    
-   // api.download()
   }
   
   private func handleFilesList(_ list: Array<Files.Metadata>) {

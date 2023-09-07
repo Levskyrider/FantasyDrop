@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var applicationCoordinator: ApplicationCoordinator!
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
     DropboxClientsManager.setupWithAppKey("jzyx97e49hv14r5")
     
     let rootVC = BaseNavigationController()
@@ -37,8 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     applicationCoordinator.start()
     
     //   applicationCoordinator.startDEBUG(vc: DEBUGViewController(), isNavigationBarHidden: false)
-    
-    
     return true
   }
   
@@ -50,16 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let oauthCompletion: DropboxOAuthCompletion = { [weak self] in
       if let authResult = $0 {
         self?.handleAuth(result: authResult)
-        switch authResult {
-        case .success:
-          print("Success! User is logged into DropboxClientsManager.")
-        case .cancel:
-          print("Authorization flow was manually canceled by user!")
-        case .error(_, let description):
-          print("Error: \(String(describing: description))")
-        }
       }
-      
     }
     let canHandleUrl = DropboxClientsManager.handleRedirectURL(url, completion: oauthCompletion)
     return canHandleUrl

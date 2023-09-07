@@ -24,7 +24,7 @@ class VideoDetailViewController: UITabBarController {
       guard let self = self else { return }
       switch event {
       case .videoDownloaded:
-        break
+        self.playVideo()
         //self.setImage()
       case .startLoadingFile:
         print("Start loading")
@@ -46,7 +46,14 @@ class VideoDetailViewController: UITabBarController {
            view.layer.addSublayer(playerLayer)
            
            // Play the video
-           player.play()
+           
+  }
+  
+  func playVideo() {
+    guard let assetURL = viewModel.assetURL else { return }
+    let player = AVPlayer(url: assetURL)
+    playerLayer.player = player
+    player.play()
   }
   
 }

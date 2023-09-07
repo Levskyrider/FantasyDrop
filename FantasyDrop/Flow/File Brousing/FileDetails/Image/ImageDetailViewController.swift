@@ -30,10 +30,11 @@ class ImageDetailViewController: UITabBarController, UIScrollViewDelegate {
     viewModel.onEvent = { [weak self] event in
       guard let self = self else { return }
       switch event {
-      case .imageDownloaded:
-        self.setImage()
       case .startLoadingFile:
         self.startLoading()
+      case .imageDownloaded:
+        self.stopLoading()
+        self.setImage()
       }
     }
   }

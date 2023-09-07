@@ -22,13 +22,13 @@ class VideoDetailViewModel {
   var path: String
   var api: Api
   
-  var asset: AVAsset? {
+  var assetURL: URL? {
     get {
       let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
       let fileURL = directoryURL.appendingPathComponent(self.path)
       if fileManager.fileExists(atPath: fileURL.path) {
-        let asset = AVAsset(url: fileURL)
-        return asset
+      //  let asset = AVAsset(url: fileURL)
+        return fileURL
       } else {
         downloadVideo(atPath: self.path)
         return nil
@@ -36,15 +36,29 @@ class VideoDetailViewModel {
     }
   }
   
+  func startLoadVideo() {
+    let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    let fileURL = directoryURL.appendingPathComponent(self.path)
+    if fileManager.fileExists(atPath: fileURL.path) {
+      return
+    } else {
+      downloadVideo(atPath: self.path)
+    }
+  }
+  
   init(filePath: String, api: Api = Api()) {
     self.api = api
     self.path = filePath
+    startLoadVideo()
   }
   
   func downloadVideo(atPath path: String) {
-    api.download(path: path) { [weak self] bool in
-      if bool {
-      //  self?.onEvent?(.imageDownloaded)
+    DispatchQueue.global().async { [weak self] in
+      guard let self = self else { return }
+      self.api.download(path: path) { bool in
+        if bool {
+          self.onEvent?(.videoDownloaded)
+        }
       }
     }
   }

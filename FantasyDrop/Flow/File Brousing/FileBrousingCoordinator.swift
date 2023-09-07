@@ -54,7 +54,8 @@ class FileBrousingCoordinator: Coordinator {
   }
   
   func showVideoDetail(path: String) {
-    let vc = VideoDetailViewController()
+    let viewModel = VideoDetailViewModel(filePath: path, api: self.api)
+    let vc = VideoDetailViewController(viewModel: viewModel)
     push(controller: vc)
   }
   

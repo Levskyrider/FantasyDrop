@@ -47,6 +47,7 @@ class ImageDetailViewModel {
     }
   }
   
+  
   init(filePath: String, api: Api = Api()) {
     self.api = api
     self.path = filePath
@@ -54,9 +55,12 @@ class ImageDetailViewModel {
   }
   
   func downloadImage(atPath path: String) {
-    api.download(path: path) { [weak self] bool in
-      if bool {
-        self?.onEvent?(.imageDownloaded)
+    DispatchQueue.global().async { [weak self] in
+      guard let self = self else { return }
+      self.api.download(path: path) {  bool in
+        if bool {
+          self.onEvent?(.imageDownloaded)
+        }
       }
     }
   }

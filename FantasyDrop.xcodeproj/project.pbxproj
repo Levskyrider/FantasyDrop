@@ -10,7 +10,6 @@
 		4B16CFD52AA4DD9B000A973B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16CFD42AA4DD9B000A973B /* AuthViewController.swift */; };
 		4B16CFD72AA4DE0D000A973B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16CFD62AA4DE0D000A973B /* AuthViewModel.swift */; };
 		4B16CFDC2AA4EBEE000A973B /* SwiftyDropbox in Frameworks */ = {isa = PBXBuildFile; productRef = 4B16CFDB2AA4EBEE000A973B /* SwiftyDropbox */; };
-		4B55B9F32AA619960039B1DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55B9F22AA619960039B1DD /* SceneDelegate.swift */; };
 		4B55B9F72AA629BC0039B1DD /* FileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55B9F62AA629BC0039B1DD /* FileCollectionViewCell.swift */; };
 		4B55B9FA2AA671460039B1DD /* FileListVC+CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55B9F92AA671460039B1DD /* FileListVC+CollectionDataSource.swift */; };
 		4B55B9FC2AA671560039B1DD /* FileListVC+CollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55B9FB2AA671560039B1DD /* FileListVC+CollectionDelegate.swift */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		4B16CFD42AA4DD9B000A973B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		4B16CFD62AA4DE0D000A973B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		4B55B9F22AA619960039B1DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4B55B9F62AA629BC0039B1DD /* FileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCollectionViewCell.swift; sourceTree = "<group>"; };
 		4B55B9F92AA671460039B1DD /* FileListVC+CollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileListVC+CollectionDataSource.swift"; sourceTree = "<group>"; };
 		4B55B9FB2AA671560039B1DD /* FileListVC+CollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileListVC+CollectionDelegate.swift"; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 			children = (
 				4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */,
 				4BACBAFE2AA2452A009FBE45 /* ApplicationCoordinator.swift */,
-				4B55B9F22AA619960039B1DD /* SceneDelegate.swift */,
 				4BACBB022AA2456E009FBE45 /* Api.swift */,
 				4B55BA082AA8CD690039B1DD /* ThumbnailManager.swift */,
 				4B55B9FD2AA690100039B1DD /* DEBUGViewController.swift */,
@@ -308,7 +305,6 @@
 				4B55B9F72AA629BC0039B1DD /* FileCollectionViewCell.swift in Sources */,
 				4B55BA072AA787C70039B1DD /* VideoDetailViewController.swift in Sources */,
 				4B16CFD72AA4DE0D000A973B /* AuthViewModel.swift in Sources */,
-				4B55B9F32AA619960039B1DD /* SceneDelegate.swift in Sources */,
 				4B55BA092AA8CD690039B1DD /* ThumbnailManager.swift in Sources */,
 				4BACBB032AA2456E009FBE45 /* Api.swift in Sources */,
 				4BD2E3F02AA527F70030D747 /* FileListViewController.swift in Sources */,

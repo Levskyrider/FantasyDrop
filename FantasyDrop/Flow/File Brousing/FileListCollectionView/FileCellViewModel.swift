@@ -41,7 +41,7 @@ class FileCellViewModel {
     let fileExtension = path.components(separatedBy: ".").last
     self.fileExtension = fileExtension
     switch fileExtension {
-    case "mp3":
+    case "mp4":
       self.fileType = .video
     case "png", "jpeg":
       self.fileType = .image

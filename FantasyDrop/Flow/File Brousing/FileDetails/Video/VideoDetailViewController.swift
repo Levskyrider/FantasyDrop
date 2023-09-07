@@ -8,12 +8,20 @@
 import UIKit
 import AVFoundation
 
-class VideoDetailViewController: UITabBarController {
+class VideoDetailViewController: UIViewController {
+  
+  //MARK: - variables
   
   var viewModel: VideoDetailViewModel!
+  var player: AVPlayer?
   
-  var player: AVPlayer?//(url: URL(fileURLWithPath: "path_to_your_video.mp4")) // Replace with your video URL or file path
-  let playerLayer = AVPlayerLayer()
+  //MARK: - UI
+  
+  var playerView = PlayerView()
+  var contentView = UIView()
+  var activityIndiccator = UIActivityIndicatorView()
+  
+  //MARK: - Init
   
   init(viewModel: VideoDetailViewModel) {
     self.viewModel = viewModel
@@ -35,25 +43,47 @@ class VideoDetailViewController: UITabBarController {
     fatalError("init(coder:) has not been implemented")
   }
   
+  //MARK: - Life cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = .white
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
     
-    // Configure the player layer
-//    playerLayer.player = player
-    playerLayer.frame = view.bounds
-    playerLayer.videoGravity = .resizeAspectFill
-    view.layer.addSublayer(playerLayer)
+    self.view.addSubview(contentView)
+    contentView.snp.makeConstraints { make in
+      make.top.left.right.bottom.equalTo(self.view)
+    }
     
-    // Play the video
+    self.contentView.addSubview(playerView)
+    playerView.translatesAutoresizingMaskIntoConstraints = false
+    playerView.snp.makeConstraints { make in
+      make.top.left.right.equalTo(self.view.safeAreaLayoutGuide)
+      make.bottom.equalTo(self.contentView).inset(80)
+    }
+    playerView.playerLayer.videoGravity = .resizeAspect
+    playerView.isHidden = true
     
+    self.view.addSubview(activityIndiccator)
+    activityIndiccator.snp.makeConstraints { make in
+      make.top.left.right.bottom.equalTo(playerView)
+    }
+    activityIndiccator.startAnimating()
+    
+    playVideo()
   }
   
   func playVideo() {
     guard let assetURL = viewModel.assetURL else { return }
+    activityIndiccator.stopAnimating()
+    activityIndiccator.isHidden = true
     let player = AVPlayer(url: assetURL)
     self.player = player
-    playerLayer.player = self.player
+    playerView.playerLayer.player = self.player
+    playerView.isHidden = false
     player.play()
   }
-  
+    
 }

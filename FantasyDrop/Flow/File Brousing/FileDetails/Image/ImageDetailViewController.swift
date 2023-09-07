@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageDetailViewController: UITabBarController, UIScrollViewDelegate {
+class ImageDetailViewController: UIViewController, UIScrollViewDelegate {
   
   //MARK: - Variables
   
@@ -21,6 +21,7 @@ class ImageDetailViewController: UITabBarController, UIScrollViewDelegate {
     scrollView.minimumZoomScale = 1.0
     scrollView.maximumZoomScale = 2.0
     scrollView.translatesAutoresizingMaskIntoConstraints = false
+    scrollView.backgroundColor = .white
     return scrollView
   }()
   
@@ -31,7 +32,7 @@ class ImageDetailViewController: UITabBarController, UIScrollViewDelegate {
     return imageView
   }()
   
-  lazy var activityIndicator = UIActivityIndicatorView()
+  var activityIndicator = UIActivityIndicatorView()
   
   //MARK: - Init
   
@@ -61,35 +62,39 @@ class ImageDetailViewController: UITabBarController, UIScrollViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Create UIScrollView
+    self.view.addSubview(activityIndicator)
+    activityIndicator.snp.makeConstraints { make in
+      make.top.left.right.bottom.equalTo(self.view)
+    }
+    activityIndicator.isHidden = true
+    activityIndicator.color = .darkGray
+   
     scrollView.delegate = self
-    
     if let image = viewModel.image {
       imageView.image = image
+    } else {
+      viewModel.startLoadImage()
     }
-  
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    view.backgroundColor = .white
     setupUI()
   }
   
   func setupUI() {
     view.addSubview(scrollView)
-    NSLayoutConstraint.activate([
-      scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-      scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-      scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-    ])
+    scrollView.snp.makeConstraints { make in
+      make.top.leading.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide)
+    }
     
     scrollView.addSubview(imageView)
-    NSLayoutConstraint.activate([
-      imageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-      imageView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
-      imageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-      imageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
-    ])
+    imageView.snp.makeConstraints { make in
+      make.center.equalTo(scrollView)
+      make.width.equalTo(scrollView.snp.width)
+      make.height.equalTo(scrollView.snp.height)
+    }
+    
   }
   
   //MARK: - Logic
@@ -99,15 +104,13 @@ class ImageDetailViewController: UITabBarController, UIScrollViewDelegate {
   }
   
   func startLoading() {
-    self.view.addSubview(activityIndicator)
-    activityIndicator.snp.makeConstraints { make in
-      make.top.left.right.bottom.equalTo(self.view)
-    }
+    activityIndicator.isHidden = false
     activityIndicator.startAnimating()
   }
   
   func stopLoading() {
     activityIndicator.stopAnimating()
+    activityIndicator.isHidden = true
     activityIndicator.removeFromSuperview()
   }
   

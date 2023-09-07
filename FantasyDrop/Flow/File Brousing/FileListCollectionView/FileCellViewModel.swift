@@ -33,7 +33,7 @@ class FileCellViewModel {
       switch fileExtension {
       case "mp4", "avi", "mov":
         return .video
-      case "png", "jpeg", "jpg", "bmp", "gif":
+      case "png", "jpeg", "jpg", "bmp", "gif", "HEIC", "heic":
         return .image
       default:
         return .other

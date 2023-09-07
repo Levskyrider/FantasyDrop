@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DEBUGViewController: UITabBarController {
+class DEBUGViewController: UIViewController {
   
   private var collectionView: UICollectionView!
 

@@ -60,12 +60,12 @@ class FileListViewController: UIViewController {
   
   override func viewDidLoad() {
     viewModel.loadFilesList()
+    setupCollectionView()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     setupNavigationBar()
-    setupCollectionView()
     
     setupUI()
   }

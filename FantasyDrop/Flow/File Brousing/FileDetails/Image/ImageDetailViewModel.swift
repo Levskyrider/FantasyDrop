@@ -44,11 +44,12 @@ class ImageDetailViewModel {
   init(filePath: String, api: Api = Api()) {
     self.api = api
     self.path = filePath
-    startLoadImage()
   }
   
   func startLoadImage() {
+    onEvent?(.startLoadingFile)
     if fileManager.fileExists(atPath: fileURL.path) {
+      onEvent?(.imageDownloaded)
       return
     } else {
       downloadImage(atPath: self.path)

@@ -17,7 +17,6 @@ class Api {
   
   let appKey = "jzyx97e49hv14r5"
   let appSecret = "osxwb9bhuyypr8e"
-  
   var permanentRefreshToken: String?
   
   var accessToken: String? {
@@ -33,9 +32,7 @@ class Api {
       return DropboxClientsManager.authorizedClient
     }
   }
-  
-  var thumbnailManager = ThumbnailManager.shared
-  
+    
   init(accessToken: String? = nil, refreshToken: String? = nil) {
     DropboxClientsManager.authorizedClient = nil
     self.accessToken = accessToken
@@ -97,7 +94,6 @@ class Api {
   }
   
   func loadFilesList(completion: @escaping ((DropboxResult<Array<Files.Metadata>>) -> ())) {
-    // DropboxClientsManager.authorizedClient = nil
     if client == nil {
       refreshToken {
         self.loadFilesList(completion: completion)
@@ -117,6 +113,13 @@ class Api {
   
   
   func download(path: String, completion: @escaping ((Bool) -> ())) {
+    if client == nil {
+      refreshToken {
+        self.download(path: path, completion: completion)
+      }
+      return
+    }
+    
     let fileManager = FileManager.default
     let directoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let destURL = directoryURL.appendingPathComponent(path)

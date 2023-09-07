@@ -36,20 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
       applicationCoordinator = ApplicationCoordinator(navigationController: rootVC, api: api)
       applicationCoordinator.start()
+      
+   //   applicationCoordinator.startDEBUG(vc: DEBUGViewController(), isNavigationBarHidden: false)
+
     }
     return true
   }
-  
-//  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-//    let oauthCompletion: DropboxOAuthCompletion = { [weak self] in
-//      if let authResult = $0 {
-//        self?.applicationCoordinator.authResultHandled(authResult)
-//      }
-//    }
-//    let canHandleUrl = DropboxClientsManager.handleRedirectURL(url, completion: oauthCompletion)
-//    return canHandleUrl
-//  }
-  
   
 }
 

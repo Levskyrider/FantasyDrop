@@ -21,7 +21,8 @@ class ApplicationCoordinator: Coordinator  {
   }
   
   func start() {
-    startAuth()
+//    startAuth()
+    startFileBrousing()
   }
   
   func startAuth() {
@@ -47,6 +48,10 @@ class ApplicationCoordinator: Coordinator  {
   
   func finish() {
     print("Finish")
+  }
+  
+  func startDEBUG(vc: UIViewController, isNavigationBarHidden: Bool) {
+    push(controller: vc, isNavBarHidden: isNavigationBarHidden)
   }
   
 }

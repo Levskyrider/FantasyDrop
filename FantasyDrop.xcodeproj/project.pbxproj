@@ -11,6 +11,16 @@
 		4B16CFD72AA4DE0D000A973B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16CFD62AA4DE0D000A973B /* AuthViewModel.swift */; };
 		4B16CFDC2AA4EBEE000A973B /* SwiftyDropbox in Frameworks */ = {isa = PBXBuildFile; productRef = 4B16CFDB2AA4EBEE000A973B /* SwiftyDropbox */; };
 		4B55B9F32AA619960039B1DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55B9F22AA619960039B1DD /* SceneDelegate.swift */; };
+		4B55B9F72AA629BC0039B1DD /* FileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55B9F62AA629BC0039B1DD /* FileCollectionViewCell.swift */; };
+		4B55B9FA2AA671460039B1DD /* FileListVC+CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55B9F92AA671460039B1DD /* FileListVC+CollectionDataSource.swift */; };
+		4B55B9FC2AA671560039B1DD /* FileListVC+CollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55B9FB2AA671560039B1DD /* FileListVC+CollectionDelegate.swift */; };
+		4B55B9FE2AA690100039B1DD /* DEBUGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55B9FD2AA690100039B1DD /* DEBUGViewController.swift */; };
+		4B55BA002AA769B30039B1DD /* FileCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55B9FF2AA769B30039B1DD /* FileCellViewModel.swift */; };
+		4B55BA042AA787AD0039B1DD /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55BA032AA787AD0039B1DD /* ImageDetailViewController.swift */; };
+		4B55BA072AA787C70039B1DD /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55BA062AA787C70039B1DD /* VideoDetailViewController.swift */; };
+		4B55BA092AA8CD690039B1DD /* ThumbnailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55BA082AA8CD690039B1DD /* ThumbnailManager.swift */; };
+		4B55BA0D2AA934BD0039B1DD /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55BA0C2AA934BD0039B1DD /* ImageDetailViewModel.swift */; };
+		4B55BA0F2AA9488E0039B1DD /* VideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55BA0E2AA9488E0039B1DD /* VideoDetailViewModel.swift */; };
 		4BACBAE92AA23E9F009FBE45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */; };
 		4BACBAF22AA23EA1009FBE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BACBAF12AA23EA1009FBE45 /* Assets.xcassets */; };
 		4BACBAF52AA23EA1009FBE45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BACBAF32AA23EA1009FBE45 /* LaunchScreen.storyboard */; };
@@ -31,6 +41,16 @@
 		4B16CFD42AA4DD9B000A973B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		4B16CFD62AA4DE0D000A973B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4B55B9F22AA619960039B1DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4B55B9F62AA629BC0039B1DD /* FileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B55B9F92AA671460039B1DD /* FileListVC+CollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileListVC+CollectionDataSource.swift"; sourceTree = "<group>"; };
+		4B55B9FB2AA671560039B1DD /* FileListVC+CollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileListVC+CollectionDelegate.swift"; sourceTree = "<group>"; };
+		4B55B9FD2AA690100039B1DD /* DEBUGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUGViewController.swift; sourceTree = "<group>"; };
+		4B55B9FF2AA769B30039B1DD /* FileCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCellViewModel.swift; sourceTree = "<group>"; };
+		4B55BA032AA787AD0039B1DD /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		4B55BA062AA787C70039B1DD /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		4B55BA082AA8CD690039B1DD /* ThumbnailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailManager.swift; sourceTree = "<group>"; };
+		4B55BA0C2AA934BD0039B1DD /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
+		4B55BA0E2AA9488E0039B1DD /* VideoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewModel.swift; sourceTree = "<group>"; };
 		4BACBAE52AA23E9F009FBE45 /* FantasyDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BACBAF12AA23EA1009FBE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +98,44 @@
 			path = Intro;
 			sourceTree = "<group>";
 		};
+		4B55B9F82AA667EE0039B1DD /* FileListCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				4B55B9F92AA671460039B1DD /* FileListVC+CollectionDataSource.swift */,
+				4B55B9FB2AA671560039B1DD /* FileListVC+CollectionDelegate.swift */,
+				4B55B9F62AA629BC0039B1DD /* FileCollectionViewCell.swift */,
+				4B55B9FF2AA769B30039B1DD /* FileCellViewModel.swift */,
+			);
+			path = FileListCollectionView;
+			sourceTree = "<group>";
+		};
+		4B55BA052AA787B20039B1DD /* FileDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4B55BA0A2AA927F90039B1DD /* Image */,
+				4B55BA0B2AA927FE0039B1DD /* Video */,
+			);
+			path = FileDetails;
+			sourceTree = "<group>";
+		};
+		4B55BA0A2AA927F90039B1DD /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				4B55BA032AA787AD0039B1DD /* ImageDetailViewController.swift */,
+				4B55BA0C2AA934BD0039B1DD /* ImageDetailViewModel.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		4B55BA0B2AA927FE0039B1DD /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				4B55BA062AA787C70039B1DD /* VideoDetailViewController.swift */,
+				4B55BA0E2AA9488E0039B1DD /* VideoDetailViewModel.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		4BACBADC2AA23E9F009FBE45 = {
 			isa = PBXGroup;
 			children = (
@@ -112,9 +170,11 @@
 			isa = PBXGroup;
 			children = (
 				4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */,
-				4B55B9F22AA619960039B1DD /* SceneDelegate.swift */,
 				4BACBAFE2AA2452A009FBE45 /* ApplicationCoordinator.swift */,
+				4B55B9F22AA619960039B1DD /* SceneDelegate.swift */,
 				4BACBB022AA2456E009FBE45 /* Api.swift */,
+				4B55BA082AA8CD690039B1DD /* ThumbnailManager.swift */,
+				4B55B9FD2AA690100039B1DD /* DEBUGViewController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -161,6 +221,8 @@
 				4BD2E3EC2AA526B40030D747 /* FileBrousingCoordinator.swift */,
 				4BD2E3EF2AA527F70030D747 /* FileListViewController.swift */,
 				4BD2E3F12AA528F20030D747 /* FileListViewModel.swift */,
+				4B55BA052AA787B20039B1DD /* FileDetails */,
+				4B55B9F82AA667EE0039B1DD /* FileListCollectionView */,
 			);
 			path = "File Brousing";
 			sourceTree = "<group>";
@@ -243,20 +305,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B55B9F72AA629BC0039B1DD /* FileCollectionViewCell.swift in Sources */,
+				4B55BA072AA787C70039B1DD /* VideoDetailViewController.swift in Sources */,
 				4B16CFD72AA4DE0D000A973B /* AuthViewModel.swift in Sources */,
 				4B55B9F32AA619960039B1DD /* SceneDelegate.swift in Sources */,
+				4B55BA092AA8CD690039B1DD /* ThumbnailManager.swift in Sources */,
 				4BACBB032AA2456E009FBE45 /* Api.swift in Sources */,
 				4BD2E3F02AA527F70030D747 /* FileListViewController.swift in Sources */,
 				4BACBAE92AA23E9F009FBE45 /* AppDelegate.swift in Sources */,
+				4B55B9FE2AA690100039B1DD /* DEBUGViewController.swift in Sources */,
 				4BACBB0A2AA3693C009FBE45 /* IntroViewController.swift in Sources */,
+				4B55BA0F2AA9488E0039B1DD /* VideoDetailViewModel.swift in Sources */,
+				4B55B9FA2AA671460039B1DD /* FileListVC+CollectionDataSource.swift in Sources */,
 				4BD2E3F22AA528F20030D747 /* FileListViewModel.swift in Sources */,
+				4B55B9FC2AA671560039B1DD /* FileListVC+CollectionDelegate.swift in Sources */,
 				4BACBB012AA24549009FBE45 /* Coordinator.swift in Sources */,
 				4BACBAFD2AA24460009FBE45 /* BaseNavigationController.swift in Sources */,
+				4B55BA0D2AA934BD0039B1DD /* ImageDetailViewModel.swift in Sources */,
 				4BACBB112AA36C2C009FBE45 /* UIView+SnapKit.swift in Sources */,
 				4BD2E3ED2AA526B40030D747 /* FileBrousingCoordinator.swift in Sources */,
 				4BACBAFF2AA2452A009FBE45 /* ApplicationCoordinator.swift in Sources */,
 				4B16CFD52AA4DD9B000A973B /* AuthViewController.swift in Sources */,
+				4B55BA002AA769B30039B1DD /* FileCellViewModel.swift in Sources */,
 				4BACBB072AA246D3009FBE45 /* AuthCoordinator.swift in Sources */,
+				4B55BA042AA787AD0039B1DD /* ImageDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

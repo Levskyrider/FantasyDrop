@@ -51,6 +51,26 @@ class AuthViewController: UIViewController {
     return button
   }()
   
+  private let authSuccessViewSize = CGSize(width: 200, height: 80)
+  
+  private lazy var authSuccessView: UIView = {
+    let view = UIView()
+    view.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+    view.clipsToBounds = true
+    view.layer.cornerRadius = 15
+    let titleLabel = UILabel()
+    titleLabel.text = "Authorisation\nsuccess!"
+    titleLabel.textColor = .white
+    titleLabel.textAlignment = .center
+    titleLabel.numberOfLines = 0
+    titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+    view.addSubview(titleLabel)
+    titleLabel.snp.makeConstraints { make in
+      make.center.equalTo(view)
+    }
+    return view
+  }()
+  
   //MARK: - Init
   
   init(viewModel: AuthViewModel) {
@@ -85,7 +105,7 @@ class AuthViewController: UIViewController {
     self.view.addSubview(titleLabel)
     titleLabel.snp.makeConstraints { make in
       make.centerX.equalTo(self.view)
-      make.top.equalTo(self.view.snp.top).inset(Defaults.standardInset)
+      make.top.equalTo(self.view.safeAreaLayoutGuide).inset(Defaults.standardInset)
     }
     
     self.view.addSubview(authButton)
@@ -108,9 +128,23 @@ class AuthViewController: UIViewController {
   }
   
   func presentSuccessAuth() {
-    onEvent?(.loggedIn)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+      self.authSuccessView.alpha = 0
+      self.view.addSubview(self.authSuccessView)
+      self.authSuccessView.snp.makeConstraints { make in
+        make.center.equalTo(self.view)
+        make.size.equalTo(self.authSuccessViewSize)
+      }
+      self.view.layoutIfNeeded()
+      UIView.animate(withDuration: 0.5) {
+        self.authSuccessView.alpha = 1
+      }
+    }
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+      self.onEvent?(.loggedIn)
+    }
   }
-  
+
 }
 
 //MARK: - Handle Dropbox auth result

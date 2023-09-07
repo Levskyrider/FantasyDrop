@@ -11,11 +11,16 @@ fileprivate enum Defaults {
   static let title: String = "Files"
 }
 
+enum FileListViewControllerEvent {
+  case shouldOpenFile(FileType, String)
+}
+
 class FileListViewController: UIViewController {
   
   //MARK: - Variables
   
   var viewModel: FileListViewModel!
+  var onEvent: ((FileListViewControllerEvent) -> ())?
   
   //MARK: - UI
   
@@ -41,11 +46,22 @@ class FileListViewController: UIViewController {
   
   //MARK: - Life cycle
   
+  override func viewDidLoad() {
+    title = Defaults.title
+    viewModel.loadFilesList()
+  }
+  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    setupUI()
     setupNavigationBar()
-    viewModel.readFiles()
+    setupCollectionView()
+    
+    setupUI()
+    
+    bind()
+    
+    
+    
   }
   
   //MARK: - Setup UI
@@ -55,24 +71,56 @@ class FileListViewController: UIViewController {
     backgroundImageView.snp.makeConstraints { make in
       make.top.left.right.bottom.equalTo(self.view)
     }
+    
+    self.view.addSubview(collectionView)
+    collectionView.snp.makeConstraints { make in
+      make.top.left.right.equalTo(self.view.safeAreaLayoutGuide)
+      make.bottom.equalTo(self.view)
+    }
   }
   
   func setupNavigationBar() {
     title = Defaults.title
     if let navigationController = self.navigationController as? BaseNavigationController {
-      navigationController.setup(color: UIColor.white)
+      navigationController.isNavigationBarHidden = false
+      navigationController.setup(color: .white)
     }
+  }
+  
+  func setupCollectionView() {
+    
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .vertical
+    layout.minimumInteritemSpacing = 0
+    let squareItemSize = self.view.bounds.width / 2
+    layout.itemSize = CGSize(width: squareItemSize, height: squareItemSize)
+    
+    collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+    collectionView.backgroundColor = .clear
+    collectionView.dataSource = self
+    collectionView.delegate = self
+    
+    collectionView.register(FileCollectionViewCell.self, forCellWithReuseIdentifier: FileCollectionViewCell.identrifier)
   }
   
   //MARK: - Bind
   
   func bind() {
-    
+    viewModel.onEvent = { [weak self] event in
+      guard let self = self else { return }
+      switch event {
+      case .listLoaded:
+        self.reloadCollectionView()
+      case .errorLoadingFileList(let errorDescription):
+        print(errorDescription)
+      }
+    }
   }
   
-  func setupCollectionView() {
-    
+  //MARK: - UI logic
+  
+  func reloadCollectionView() {
+    collectionView.reloadData()
   }
-  
-  
+    
 }

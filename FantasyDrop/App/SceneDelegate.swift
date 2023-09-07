@@ -26,32 +26,34 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       self.window!.rootViewController = rootVC
       self.window!.makeKeyAndVisible()
       
-      let api = Api()
+     //  let token = "sl.BlfmN4ZtL8Kiji6lib1awO7brsDOmei6bMqMqJ4U0_A3AQfwg1SyptUzysT7lcAZHVT8rH0eYu340MfaEOXpHOuFNxnq24p7Oqb9uXNFXf148G2smQH8ndgyiUCaKGxjmyIS3CFFcNL7am_iUH4XEHM"
+      let api = Api(refreshToken: "91q26ELJ1G4AAAAAAAAAAbFJ6S7TNhSfm928x1RMbC6WX71XTQbIGUuw_ekKpfgw")
       
       applicationCoordinator = ApplicationCoordinator(navigationController: rootVC, api: api)
+     // applicationCoordinator.startDEBUG(vc: DEBUGViewController(), isNavigationBarHidden: false)
       applicationCoordinator.start()
     }
   }
   
-//  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-//    let oauthCompletion: DropboxOAuthCompletion = { [weak self] in
-//      if let authResult = $0 {
-//          switch authResult {
-//          case .success:
-//              print("Success! User is logged into DropboxClientsManager.")
-//          case .cancel:
-//              print("Authorization flow was manually canceled by user!")
-//          case .error(_, let description):
-//              print("Error: \(String(describing: description))")
-//          }
-//      }
-//    
-//    }
-//    
-//    for context in URLContexts {
-//      // stop iterating after the first handle-able url
-//      if DropboxClientsManager.handleRedirectURL(context.url, completion: oauthCompletion) { break }
-//    }
-//  }
+  func handleAuth(result: DropboxOAuthResult) {
+    applicationCoordinator.authResultHandled(result)
+  }
+  
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    let oauthCompletion: DropboxOAuthCompletion = { [weak self] in
+      if let authResult = $0 {
+        switch authResult {
+        case .success(let accessToken):
+          print(accessToken)
+        default:break
+        }
+        self?.handleAuth(result: authResult)
+      }
+    }
+    
+    for context in URLContexts {
+      if DropboxClientsManager.handleRedirectURL(context.url, completion: oauthCompletion) { break }
+    }
+  }
   
 }

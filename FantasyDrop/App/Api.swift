@@ -42,7 +42,7 @@ class Api {
     }
   }
   
-  func refreshToken(completion: (() -> ())? = nil) {
+  func refreshToken(completion: ((String?) -> ())? = nil) {
     guard let tokenURL = URL(string: "https://api.dropbox.com/oauth2/token") else { return }
     
     var request = URLRequest(url: tokenURL)
@@ -71,7 +71,7 @@ class Api {
     task.resume()
   }
   
-  private func setWithNew(accessToken: String?, nextExpiresIn: TimeInterval?, completion: (() -> ())? = nil) {
+  private func setWithNew(accessToken: String?, nextExpiresIn: TimeInterval?, completion: ((String?) -> ())? = nil) {
     self.accessToken = accessToken
     if let interval = nextExpiresIn {
       let _ = Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { [weak self] _ in
@@ -79,7 +79,7 @@ class Api {
         self.refreshToken()
       }
     }
-    completion?()
+    completion?(accessToken)
   }
   
   func dropboxAuth(currentController: UIViewController, scopes: [String] = ["account_info.read", "files.content.write", "files.content.read"]) {
@@ -94,13 +94,7 @@ class Api {
   }
   
   func loadFilesList(completion: @escaping ((DropboxResult<Array<Files.Metadata>>) -> ())) {
-    if client == nil {
-      refreshToken {
-        self.loadFilesList(completion: completion)
-      }
-      return
-    }
-    client!.files.listFolder(path: "").response { response, error in
+    client?.files.listFolder(path: "").response { response, error in
       if let result = response {
         print(result.entries)
         completion(.success(result.entries))
@@ -110,16 +104,7 @@ class Api {
     }
   }
   
-  
-  
-  func download(path: String, completion: @escaping ((Bool) -> ())) {
-    if client == nil {
-      refreshToken {
-        self.download(path: path, completion: completion)
-      }
-      return
-    }
-    
+  func download(path: String, completion: @escaping ((DropboxResult<(Files.FileMetadata, URL)>) -> ())) {
     let fileManager = FileManager.default
     let directoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let destURL = directoryURL.appendingPathComponent(path)
@@ -130,9 +115,10 @@ class Api {
       .response { response, error in
         if let response = response {
           print(response)
-          completion(true)
+          completion(.success(response))
         } else if let error = error {
           print(error)
+          completion(.error(error.description))
         }
       }
       .progress { progressData in

@@ -60,7 +60,9 @@ class FileBrousingCoordinator: Coordinator {
   }
   
   func finish() {
-    print("Finish")
+    for coordinator in childCoordinators {
+      coordinator.finish()
+    }
   }
   
 }

@@ -10,6 +10,7 @@ import UIKit
 //MARK: - CollectionViewDelegate
 
 extension FileListViewController: UICollectionViewDelegate {
+  
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     if viewModel.nextCellIndexToDownloadNewFiles == indexPath.row {
       viewModel.downloadNew()

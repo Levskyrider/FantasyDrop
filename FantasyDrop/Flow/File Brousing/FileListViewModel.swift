@@ -29,7 +29,15 @@ class FileListViewModel {
   private var dataSource: [FileCellViewModel] = []
   
   subscript (elementForIndexPath indexPath: IndexPath) -> FileCellViewModel {
-    return dataSource[indexPath.row]
+    return dataSource[indexPath.item]
+  }
+  
+  func remove(at indexPath: IndexPath) -> FileCellViewModel {
+    dataSource.remove(at: indexPath.item)
+  }
+  
+  func insert(_ item: FileCellViewModel, at indexPath: IndexPath) {
+    dataSource.insert(item, at: indexPath.item)
   }
   
   var itemsCount: Int {

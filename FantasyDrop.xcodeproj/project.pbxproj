@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0FBF832AAA86A2006081EA /* FantasyDropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FBF822AAA86A2006081EA /* FantasyDropUITests.swift */; };
+		4B0FBF852AAA86A2006081EA /* FantasyDropUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FBF842AAA86A2006081EA /* FantasyDropUITestsLaunchTests.swift */; };
+		4B0FBF8C2AAA8829006081EA /* LoadingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FBF8B2AAA8829006081EA /* LoadingCoordinator.swift */; };
 		4B16CFD52AA4DD9B000A973B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16CFD42AA4DD9B000A973B /* AuthViewController.swift */; };
 		4B16CFD72AA4DE0D000A973B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16CFD62AA4DE0D000A973B /* AuthViewModel.swift */; };
 		4B16CFDC2AA4EBEE000A973B /* SwiftyDropbox in Frameworks */ = {isa = PBXBuildFile; productRef = 4B16CFDB2AA4EBEE000A973B /* SwiftyDropbox */; };
@@ -21,6 +24,7 @@
 		4B55BA0D2AA934BD0039B1DD /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55BA0C2AA934BD0039B1DD /* ImageDetailViewModel.swift */; };
 		4B55BA0F2AA9488E0039B1DD /* VideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55BA0E2AA9488E0039B1DD /* VideoDetailViewModel.swift */; };
 		4B55BA112AAA18080039B1DD /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55BA102AAA18080039B1DD /* PlayerView.swift */; };
+		4B55BA1F2AAA732C0039B1DD /* FantasyDropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55BA1E2AAA732C0039B1DD /* FantasyDropTests.swift */; };
 		4BACBAE92AA23E9F009FBE45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */; };
 		4BACBAF22AA23EA1009FBE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BACBAF12AA23EA1009FBE45 /* Assets.xcassets */; };
 		4BACBAF52AA23EA1009FBE45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BACBAF32AA23EA1009FBE45 /* LaunchScreen.storyboard */; };
@@ -37,7 +41,28 @@
 		4BD2E3F22AA528F20030D747 /* FileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD2E3F12AA528F20030D747 /* FileListViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4B0FBF862AAA86A2006081EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BACBADD2AA23E9F009FBE45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BACBAE42AA23E9F009FBE45;
+			remoteInfo = FantasyDrop;
+		};
+		4B55BA202AAA732C0039B1DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BACBADD2AA23E9F009FBE45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BACBAE42AA23E9F009FBE45;
+			remoteInfo = FantasyDrop;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		4B0FBF802AAA86A2006081EA /* FantasyDropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FantasyDropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B0FBF822AAA86A2006081EA /* FantasyDropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyDropUITests.swift; sourceTree = "<group>"; };
+		4B0FBF842AAA86A2006081EA /* FantasyDropUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyDropUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4B0FBF8B2AAA8829006081EA /* LoadingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCoordinator.swift; sourceTree = "<group>"; };
 		4B16CFD42AA4DD9B000A973B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		4B16CFD62AA4DE0D000A973B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4B55B9F62AA629BC0039B1DD /* FileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -51,6 +76,8 @@
 		4B55BA0C2AA934BD0039B1DD /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
 		4B55BA0E2AA9488E0039B1DD /* VideoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewModel.swift; sourceTree = "<group>"; };
 		4B55BA102AAA18080039B1DD /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		4B55BA1C2AAA732C0039B1DD /* FantasyDropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FantasyDropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B55BA1E2AAA732C0039B1DD /* FantasyDropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyDropTests.swift; sourceTree = "<group>"; };
 		4BACBAE52AA23E9F009FBE45 /* FantasyDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BACBAE82AA23E9F009FBE45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BACBAF12AA23EA1009FBE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +96,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4B0FBF7D2AAA86A2006081EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B55BA192AAA732C0039B1DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BACBAE22AA23E9F009FBE45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,6 +122,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B0FBF812AAA86A2006081EA /* FantasyDropUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4B0FBF822AAA86A2006081EA /* FantasyDropUITests.swift */,
+				4B0FBF842AAA86A2006081EA /* FantasyDropUITestsLaunchTests.swift */,
+			);
+			path = FantasyDropUITests;
+			sourceTree = "<group>";
+		};
+		4B0FBF8D2AAA8CC4006081EA /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				4B0FBF8B2AAA8829006081EA /* LoadingCoordinator.swift */,
+				4B16CFD92AA4DF38000A973B /* Intro */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		4B16CFD82AA4DF33000A973B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,10 +196,20 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
+		4B55BA1D2AAA732C0039B1DD /* FantasyDropTests */ = {
+			isa = PBXGroup;
+			children = (
+				4B55BA1E2AAA732C0039B1DD /* FantasyDropTests.swift */,
+			);
+			path = FantasyDropTests;
+			sourceTree = "<group>";
+		};
 		4BACBADC2AA23E9F009FBE45 = {
 			isa = PBXGroup;
 			children = (
 				4BACBAE72AA23E9F009FBE45 /* FantasyDrop */,
+				4B55BA1D2AAA732C0039B1DD /* FantasyDropTests */,
+				4B0FBF812AAA86A2006081EA /* FantasyDropUITests */,
 				4BACBAE62AA23E9F009FBE45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -149,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				4BACBAE52AA23E9F009FBE45 /* FantasyDrop.app */,
+				4B55BA1C2AAA732C0039B1DD /* FantasyDropTests.xctest */,
+				4B0FBF802AAA86A2006081EA /* FantasyDropUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +262,7 @@
 		4BACBB082AA246D9009FBE45 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				4B0FBF8D2AAA8CC4006081EA /* Loading */,
 				4BD2E3EB2AA5265C0030D747 /* Authorization */,
 				4BD2E3EE2AA526BA0030D747 /* File Brousing */,
 			);
@@ -209,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				4BACBB062AA246D3009FBE45 /* AuthCoordinator.swift */,
-				4B16CFD92AA4DF38000A973B /* Intro */,
 				4B16CFD82AA4DF33000A973B /* Auth */,
 			);
 			path = Authorization;
@@ -221,8 +292,8 @@
 				4BD2E3EC2AA526B40030D747 /* FileBrousingCoordinator.swift */,
 				4BD2E3EF2AA527F70030D747 /* FileListViewController.swift */,
 				4BD2E3F12AA528F20030D747 /* FileListViewModel.swift */,
-				4B55BA052AA787B20039B1DD /* FileDetails */,
 				4B55B9F82AA667EE0039B1DD /* FileListCollectionView */,
+				4B55BA052AA787B20039B1DD /* FileDetails */,
 			);
 			path = "File Brousing";
 			sourceTree = "<group>";
@@ -230,6 +301,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4B0FBF7F2AAA86A2006081EA /* FantasyDropUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B0FBF8A2AAA86A2006081EA /* Build configuration list for PBXNativeTarget "FantasyDropUITests" */;
+			buildPhases = (
+				4B0FBF7C2AAA86A2006081EA /* Sources */,
+				4B0FBF7D2AAA86A2006081EA /* Frameworks */,
+				4B0FBF7E2AAA86A2006081EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B0FBF872AAA86A2006081EA /* PBXTargetDependency */,
+			);
+			name = FantasyDropUITests;
+			productName = FantasyDropUITests;
+			productReference = 4B0FBF802AAA86A2006081EA /* FantasyDropUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		4B55BA1B2AAA732C0039B1DD /* FantasyDropTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B55BA222AAA732C0039B1DD /* Build configuration list for PBXNativeTarget "FantasyDropTests" */;
+			buildPhases = (
+				4B55BA182AAA732C0039B1DD /* Sources */,
+				4B55BA192AAA732C0039B1DD /* Frameworks */,
+				4B55BA1A2AAA732C0039B1DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B55BA212AAA732C0039B1DD /* PBXTargetDependency */,
+			);
+			name = FantasyDropTests;
+			productName = FantasyDropTests;
+			productReference = 4B55BA1C2AAA732C0039B1DD /* FantasyDropTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4BACBAE42AA23E9F009FBE45 /* FantasyDrop */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BACBAF92AA23EA1009FBE45 /* Build configuration list for PBXNativeTarget "FantasyDrop" */;
@@ -261,6 +368,14 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					4B0FBF7F2AAA86A2006081EA = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 4BACBAE42AA23E9F009FBE45;
+					};
+					4B55BA1B2AAA732C0039B1DD = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 4BACBAE42AA23E9F009FBE45;
+					};
 					4BACBAE42AA23E9F009FBE45 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -284,11 +399,27 @@
 			projectRoot = "";
 			targets = (
 				4BACBAE42AA23E9F009FBE45 /* FantasyDrop */,
+				4B55BA1B2AAA732C0039B1DD /* FantasyDropTests */,
+				4B0FBF7F2AAA86A2006081EA /* FantasyDropUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4B0FBF7E2AAA86A2006081EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B55BA1A2AAA732C0039B1DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BACBAE32AA23E9F009FBE45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,6 +432,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4B0FBF7C2AAA86A2006081EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B0FBF852AAA86A2006081EA /* FantasyDropUITestsLaunchTests.swift in Sources */,
+				4B0FBF832AAA86A2006081EA /* FantasyDropUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B55BA182AAA732C0039B1DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B55BA1F2AAA732C0039B1DD /* FantasyDropTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BACBAE12AA23E9F009FBE45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,6 +457,7 @@
 				4B55BA072AA787C70039B1DD /* VideoDetailViewController.swift in Sources */,
 				4B16CFD72AA4DE0D000A973B /* AuthViewModel.swift in Sources */,
 				4B55BA112AAA18080039B1DD /* PlayerView.swift in Sources */,
+				4B0FBF8C2AAA8829006081EA /* LoadingCoordinator.swift in Sources */,
 				4B55BA092AA8CD690039B1DD /* ThumbnailManager.swift in Sources */,
 				4BACBB032AA2456E009FBE45 /* Api.swift in Sources */,
 				4BD2E3F02AA527F70030D747 /* FileListViewController.swift in Sources */,
@@ -334,6 +483,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4B0FBF872AAA86A2006081EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BACBAE42AA23E9F009FBE45 /* FantasyDrop */;
+			targetProxy = 4B0FBF862AAA86A2006081EA /* PBXContainerItemProxy */;
+		};
+		4B55BA212AAA732C0039B1DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BACBAE42AA23E9F009FBE45 /* FantasyDrop */;
+			targetProxy = 4B55BA202AAA732C0039B1DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		4BACBAF32AA23EA1009FBE45 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -346,6 +508,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4B0FBF882AAA86A2006081EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3EUV3J8K83;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AugustProject.FantasyDropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FantasyDrop;
+			};
+			name = Debug;
+		};
+		4B0FBF892AAA86A2006081EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3EUV3J8K83;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AugustProject.FantasyDropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FantasyDrop;
+			};
+			name = Release;
+		};
+		4B55BA232AAA732C0039B1DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3EUV3J8K83;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AugustProject.FantasyDropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FantasyDrop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FantasyDrop";
+			};
+			name = Debug;
+		};
+		4B55BA242AAA732C0039B1DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3EUV3J8K83;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AugustProject.FantasyDropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FantasyDrop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FantasyDrop";
+			};
+			name = Release;
+		};
 		4BACBAF72AA23EA1009FBE45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -519,6 +759,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4B0FBF8A2AAA86A2006081EA /* Build configuration list for PBXNativeTarget "FantasyDropUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B0FBF882AAA86A2006081EA /* Debug */,
+				4B0FBF892AAA86A2006081EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B55BA222AAA732C0039B1DD /* Build configuration list for PBXNativeTarget "FantasyDropTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B55BA232AAA732C0039B1DD /* Debug */,
+				4B55BA242AAA732C0039B1DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4BACBAE02AA23E9F009FBE45 /* Build configuration list for PBXProject "FantasyDrop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

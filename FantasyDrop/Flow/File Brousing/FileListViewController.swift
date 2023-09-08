@@ -105,7 +105,7 @@ class FileListViewController: UIViewController {
     collectionView.backgroundColor = .clear
     collectionView.dataSource = self
     collectionView.delegate = self
-    
+        
     collectionView.register(FileCollectionViewCell.self, forCellWithReuseIdentifier: FileCollectionViewCell.identrifier)
   }
   

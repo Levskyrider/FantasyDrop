@@ -19,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
   }
   
+  //MARK: - Variables
+  
   var applicationCoordinator: ApplicationCoordinator!
+  
+  //MARK: - App life cycle
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
@@ -27,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let rootVC = BaseNavigationController()
     rootVC.isNavigationBarHidden = true
-    
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = rootVC
     window?.makeKeyAndVisible()
@@ -40,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //   applicationCoordinator.startDEBUG(vc: DEBUGViewController(), isNavigationBarHidden: false)
     return true
   }
+  
+  //MARK: - For auth flow 
   
   func handleAuth(result: DropboxOAuthResult) {
     applicationCoordinator.authResultHandled(result)

@@ -62,6 +62,8 @@ class ImageDetailViewController: UIViewController, UIScrollViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    title = viewModel.fileName
+    
     self.view.addSubview(activityIndicator)
     activityIndicator.snp.makeConstraints { make in
       make.top.left.right.bottom.equalTo(self.view)

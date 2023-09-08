@@ -21,8 +21,18 @@ class ApplicationCoordinator: Coordinator  {
   }
   
   func start() {
-//    startAuth()
-    startFileBrousing()
+    startLoadingApp()
+  }
+  
+  func startLoadingApp() {
+    let loadingCoordinator = LoadingCoordinator(navigationController: self.navigationController, api: self.api)
+    loadingCoordinator.onAppLoaded = { [weak self] in
+      guard let self = self else { return }
+      self.startFileBrousing()
+      self.removeDependency(coordinator: loadingCoordinator)
+    }
+    loadingCoordinator.start()
+    addDependency(coordinator: loadingCoordinator)
   }
   
   func startAuth() {
@@ -33,6 +43,7 @@ class ApplicationCoordinator: Coordinator  {
       case .userLoggedIn:
         print("User logged in")
         self.startFileBrousing()
+        self.removeDependency(coordinator: authCoordinator)
       }
     }
     authCoordinator.start()
@@ -45,12 +56,12 @@ class ApplicationCoordinator: Coordinator  {
     addDependency(coordinator: fileBrousingCoordinator)
   }
   
-  func finish() {
-    print("Finish")
-  }
-  
   func startDEBUG(vc: UIViewController, isNavigationBarHidden: Bool) {
     push(controller: vc, isNavBarHidden: isNavigationBarHidden)
+  }
+  
+  func finish() {
+    print("Finish")
   }
   
 }

@@ -31,16 +31,7 @@ class AuthCoordinator: Coordinator {
   }
   
   func start() {
-    startIntroViewController()
-  }
-  
-  func startIntroViewController() {
-    let introViewController = IntroViewController()
-    introViewController.onIntroLoaded = { [weak self] in
-      guard let self = self else { return }
-      self.startAuth()
-    }
-    set(controller: introViewController)
+    startAuth()
   }
   
   func startAuth() {
@@ -57,7 +48,9 @@ class AuthCoordinator: Coordinator {
   }
   
   func finish() {
-    print("Finish")
+    for coordinator in childCoordinators {
+      coordinator.finish()
+    }
   }
   
 }

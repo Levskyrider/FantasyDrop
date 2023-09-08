@@ -15,6 +15,8 @@ fileprivate enum Defaults {
 
 class FileCollectionViewCell: UICollectionViewCell {
   
+  //MARK: - Variables
+  
   static var identrifier: String {
     String(describing: self)
   }
@@ -25,6 +27,15 @@ class FileCollectionViewCell: UICollectionViewCell {
       updateUIWith(viewModel: viewModel)
     }
   }
+  
+  //MARK: - UI
+  
+  var fileNameLabel: UILabel = {
+    let label = UILabel()
+    label.textColor = .darkGray
+    label.font = UIFont.systemFont(ofSize: 12)
+    return label
+  }()
   
   var fileMiniatureImageView: UIImageView = {
     let imageView = UIImageView()
@@ -42,6 +53,8 @@ class FileCollectionViewCell: UICollectionViewCell {
     return view
   }()
   
+  //MARK: - Init
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     
@@ -52,10 +65,24 @@ class FileCollectionViewCell: UICollectionViewCell {
     
     preetyContentView.addSubview(fileMiniatureImageView)
     fileMiniatureImageView.snp.makeConstraints { make in
-      make.top.left.right.bottom.equalTo(preetyContentView).inset(15)
+      make.top.left.right.equalTo(preetyContentView).inset(15)
+      make.bottom.equalTo(preetyContentView).inset(30)
+    }
+    
+    preetyContentView.addSubview(fileNameLabel)
+    fileNameLabel.snp.makeConstraints { make in
+      make.top.equalTo(fileMiniatureImageView.snp.bottom).offset(3)
+      make.left.right.equalTo(preetyContentView).inset(15)
+      make.bottom.equalTo(preetyContentView).inset(3)
     }
     
   }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  //MARK: - Bind
   
   func bindViewModel() {
     viewModel?.onEvent = { [weak self] event in
@@ -69,15 +96,14 @@ class FileCollectionViewCell: UICollectionViewCell {
     }
   }
   
+  //MARK: - UI Logic
+  
   func updateUIWith(viewModel: FileCellViewModel?) {
     guard let viewModel = viewModel else { return }
     if let image = viewModel.imageMiniature {
       self.fileMiniatureImageView.image = image
     }
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+    self.fileNameLabel.text = viewModel.fileName
   }
   
 }

@@ -54,9 +54,12 @@ class VideoDetailViewModel {
   func downloadVideo(atPath path: String) {
     DispatchQueue.global().async { [weak self] in
       guard let self = self else { return }
-      self.api.download(path: path) { bool in
-        if bool {
+      self.api.download(path: path) { result in
+        switch result {
+        case .success(let _):
           self.onEvent?(.videoDownloaded)
+        case .error(let errorDescription):
+          print(errorDescription)
         }
       }
     }

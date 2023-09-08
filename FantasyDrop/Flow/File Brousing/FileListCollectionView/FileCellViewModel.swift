@@ -28,6 +28,12 @@ class FileCellViewModel {
     }
   }
   var path: String
+  var fileName: String? {
+    get {
+      return path.components(separatedBy: "/").last
+    }
+  }
+  
   var fileType: FileType {
     get {
       switch fileExtension {
@@ -42,7 +48,7 @@ class FileCellViewModel {
   }
   var fileExtension: String? = ""
     
-  func setImageMiniature() {
+  public func setImageMiniature() {
     onEvent?(.loadedImage(imageMiniature))
   }
   

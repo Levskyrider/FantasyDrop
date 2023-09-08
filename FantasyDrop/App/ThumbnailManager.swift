@@ -16,8 +16,6 @@ class ThumbnailManager {
     }
   }
   
-  private var cashe: [String: UIImage?] = [:]
-  
   static var shared: ThumbnailManager = {
     let instance = ThumbnailManager()
     return instance
@@ -25,6 +23,7 @@ class ThumbnailManager {
   
   private init() {}
   
+  private var cashe: [String: UIImage?] = [:]
   
   subscript (path: String) -> UIImage? {
     return cashe[path] ?? nil
